@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "133465943846",
+    "project_id": "gearup-8191c",
+    "storage_bucket": "gearup-8191c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133465943846:android:deafffbdacb53748af9be7",
+        "android_client_info": {
+          "package_name": "com.game.myapptest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "133465943846-r35up4nf3c53sf5jt5ujugb6paos2c2a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.game.myapptest",
+            "certificate_hash": "b4ba05f60ffbf7a9ce289f66d6387411d15efbbf"
+          }
+        },
+        {
+          "client_id": "133465943846-t0do7l86opaln7o5kiu7bs91dr58qlcn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChKeZosKtpZbj98Be5hpdSzwXSYprTNho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "133465943846-t0do7l86opaln7o5kiu7bs91dr58qlcn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "133465943846-og03onvrluh9a8ncmr353jos05955uqu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.gear"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
