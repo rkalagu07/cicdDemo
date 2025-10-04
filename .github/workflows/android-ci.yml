@@ -52,6 +52,9 @@ jobs:
       - name: Authenticate Firebase CLI
         run: echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > firebase_service_account.json
 
+      - name: Export GOOGLE_APPLICATION_CREDENTIALS
+        run: echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/firebase_key.json" >> $GITHUB_ENV
+
       - name: Distribute to Firebase App Distribution
         run: |
           firebase appdistribution:distribute app/build/outputs/apk/debug/app-debug.apk \
