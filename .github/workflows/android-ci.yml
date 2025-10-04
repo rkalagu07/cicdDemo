@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -49,15 +48,14 @@ jobs:
       - name: Install Firebase CLI
         run: curl -sL https://firebase.tools | bash
 
-      - name: Authenticate Firebase CLI
-        run: echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > firebase_service_account.json
-
-      - name: Export GOOGLE_APPLICATION_CREDENTIALS
-        run: echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/firebase_key.json" >> $GITHUB_ENV
+      # Save Firebase service account key to file
+      - name: Setup Firebase Service Account
+        run: |
+          echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > $HOME/firebase_key.json
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/firebase_key.json" >> $GITHUB_ENV
 
       - name: Distribute to Firebase App Distribution
         run: |
           firebase appdistribution:distribute app/build/outputs/apk/debug/app-debug.apk \
             --app ${{ secrets.FIREBASE_APP_ID }} \
-            --groups "${{ secrets.TESTER_GROUPS }}" \
-            --token "$(firebase auth:import firebase_service_account.json --json | jq -r '.refresh_token')"
+            --groups "${{ secrets.TESTER_GROUPS }}"
