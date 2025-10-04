@@ -10,7 +10,6 @@ import retrofit2.Response
 import javax.inject.Inject
 
 class NoteRepository @Inject constructor(private val noteAPI: NoteAPI) {
-
     private val _notesLiveData = MutableLiveData<NetworkResult<List<NoteResponse>>>()
     val notesLiveData get() = _notesLiveData
 
